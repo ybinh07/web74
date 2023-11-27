@@ -46,7 +46,7 @@ const updateStudentById = (id, body) => {
 const deleteStudentById = (id) => {
   // Đọc file
   const students = JSON.parse(fs.readFileSync("students.json"));
-  const result = students.filter((student) => student.id !== +id);
+  const result = students.filter((student) => student.id !== +id); // dấu + để chuyển id từ kiểu dữ liệu chuỗi thành số
   fs.writeFileSync("students.json", JSON.stringify(result));
 };
 const filteredStudent = (name)=>{

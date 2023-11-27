@@ -1,5 +1,5 @@
-// const { json } = require("express");
-const { createStudent, getStudent, getStudentById, updateStudentById, deleteStudentById } = require("../util/students");
+
+const { createStudent, getStudent, getStudentById, updateStudentById, deleteStudentById, filteredStudent, pagination } = require("../util/students");
 
   
   const createStudentController = (req, res) => {
