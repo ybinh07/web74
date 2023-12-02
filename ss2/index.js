@@ -1,6 +1,6 @@
 
 const express = require("express")
-const studentRouter = require("../ss2/routes/students-routes");
+const {studentRouter} = require("../ss2/routes/students-routes.js")
 const app = express();
 const PORT = 4000;
 
@@ -15,3 +15,4 @@ app.listen(PORT, (err) => {
     console.log(`Your app is listening on PORT ${PORT}`);
   }
 });
+  

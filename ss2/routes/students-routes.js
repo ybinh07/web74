@@ -1,6 +1,6 @@
 
 const  express = require("express");
-const studentRouter = express.Router()
+const studentRouter = express.Router();
 const {
   createStudentController,
   deleteStudentByIdController,
@@ -25,4 +25,5 @@ studentRouter.delete("/:id", deleteStudentByIdController);
 studentRouter.get("/",filteredStudentController);
 // paginated Students 
 studentRouter.get("/",paginationController);
-module.exports = { studentRouter}
+
+module.exports = {studentRouter};

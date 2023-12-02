@@ -6,10 +6,10 @@ function createStudent({ name, age, gender }) {
   const students = JSON.parse(fs.readFileSync("students.json"));
   //   Tạo student giả
   const student = {
-    id: Math.random() * 1000,
-    name: name,
-    age: age,
-    gender: gender,
+    id: Math.floor(Math.random() * 100),
+    name: "c",
+    age: 19,
+    gender: "male",
   };
   const results = [...students, { ...student }];
   fs.writeFileSync("students.json", JSON.stringify(results));
@@ -60,10 +60,11 @@ const filteredStudent = (name)=>{
 
 const pagination = (page,limit) => {
   const students = JSON.parse(fs.readFileSync("students.json"));
-  const startIndex = (page-1)*limit;
+  const startIndex = (+page-1)* +limit;
+  const endIndex = startIndex + +limit
     const totalStudents = students.length;
-    const paginatedStudents = students.slice(startIndex, startIndex +limit);
-    const toTalPage = Math.ceil(totalStudents/limit);
+    const paginatedStudents = students.slice(startIndex,endIndex );
+    const toTalPage = Math.ceil(totalStudents/ +limit);
     return paginatedStudents,toTalPage
 }
 module.exports={deleteStudentById,updateStudentById,getStudentById,getStudent,createStudent,pagination,filteredStudent}
